@@ -1,13 +1,12 @@
 Feature: Fonctionnalités de ma page d'accueil
 	Scenario: Verifier le titre de la page d'accueil
 		Given je suis sur la homepage
-		Then le titre doit être "Tesla"
-		And la description doit être "Berlines et SUV 100% électriques haut de gamme"
+		Then le titre doit être "Tesla | Berlines et SUV 100% électriques haut de gamme"
 
 	Scenario: Verifier la description
 		Given je suis sur la homepage
-		Then la description doit être "Créateur et constructeur de la berline électrique Model S et du SUV électrique Model X, Tesla a ouvert les réservations pour la Model 3, un véhicule électrique premium à partir de 35 000 $. Tesla produit également une gamme de batteries commerciales et domestiques"
-		
+		Then la description doit être "Créateur et constructeur de la berline électrique Model&nbspS et du SUV électrique Model&nbspX, Tesla a ouvert les réservations pour la Model&nbsp3, un véhicule électrique premium à partir de 35&nbsp000 $. Tesla produit également une gamme de batteries commerciales et domestiques."
+
     Scenario: Verifier le titre h1 de la page d'accueil
 		Given je suis sur la homepage
 		Then le titre doit être "Accélérations incomparables"
@@ -24,23 +23,23 @@ Feature: Fonctionnalités de ma page d'accueil
     Scenario: Bouton Configurer
             Given je suis sur la homepage
             Then je dois etre "Configurer"
-            And popUp à "./models/design" 
+            And popUp à "./models/design"
 
     Scenario: Bouton Modèle d'exposition
         Given je suis sur la homepage
         Then je dois etre "Modèle d'exposition"
-        And envoyer à "./new" 
+        And envoyer à "./new"
 
     Scenario: Bouton véhicules d'occasion
         Given je suis sur la homepage
         Then je dois etre "véhicules d'occasion"
-        And envoyer à "./used" 
+        And envoyer à "./used"
 
     Scenario: Bouton essais
         Given je suis sur la homepage
         Then je dois etre "essais"
         And popUp
-		
+
     Scenario: Un buger menu
 		Given je suis sur la homepage
 		Then le buger menu doit etre a "droite"
