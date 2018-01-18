@@ -1,16 +1,15 @@
 Feature: Fonctionnalités de ma page d'accueil
 	Scenario: Verifier le titre de la page d'accueil
 		Given je suis sur la homepage
-		Then le titre doit être "Tesla | Berlines et SUV 100% électriques haut de gamme"
+		Then le titre de la page d'accueil doit être "Tesla | Berlines et SUV 100% électriques haut de gamme"
 
 	Scenario: Verifier la description
 		Given je suis sur la homepage
-		Then la description doit être "Créateur et constructeur de la berline électrique Model&nbspS et du SUV électrique Model&nbspX, Tesla a ouvert les réservations pour la Model&nbsp3, un véhicule électrique premium à partir de 35&nbsp000 $. Tesla produit également une gamme de batteries commerciales et domestiques."
+		Then la description doit être "Créateur et constructeur de la berline électrique Model S et du SUV électrique Model X, Tesla a ouvert les réservations pour la Model 3, un véhicule électrique premium à partir de 35 000 $. Tesla produit également une gamme de batteries commerciales et domestiques."
 
     Scenario: Verifier le titre h1 de la page d'accueil
 		Given je suis sur la homepage
-		Then le titre doit être "Accélérations incomparables"
-		And la description doit être "Autonomie inégalée. Sécurité active avancée. Sécurité active avancée.*"
+		Then le titre doit être "Accélérations incomparables<br>Autonomie inégalée. Sécurité active avancée."
 
     Scenario: Boutons presents sur la homepage
             Given je suis sur la homepage

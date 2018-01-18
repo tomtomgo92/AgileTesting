@@ -10,6 +10,7 @@ import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import cucumber.api.java.en.And;
 
 import static org.junit.Assert.*;
 
@@ -37,8 +38,21 @@ public class HomepageSteps {
 		driver.get("https://www.tesla.com/fr_FR/");
 	}
 
-	@Then("^le titre doit être \"([^\"]*)\"$")
+	@Then("^le titre doit être\"([^\"]*)\"$")
 	public void le_titre_doit_être(String arg1) throws Throwable {
+	    assertEquals(driver.findElement(By.cssSelector(".section-title--hed.hide-on-mobile")),arg1);
+	}
+
+	@And("^le sous titre doit être \"([^\"]*)\"$")
+	public void le_sous_titre_doit_être(String arg1) throws Throwable {
+		// By CSS Selector
+	    assertEquals(driver.findElement(By.cssSelector("meta[name='description']")).getAttribute("content"), arg1);
+		// By XPATH, si vous préférez...
+	    // assertEquals(driver.findElement(By.xpath("//meta[@name='description']")).getAttribute("content"), arg1);
+	}
+
+	@Then("^le titre de la page d'accueil doit être\"([^\"]*)\"$")
+	public void le_titre_de_la_page_d_accueil_doit_être(String arg1) throws Throwable {
 	    assertEquals(driver.getTitle(), arg1);
 	}
 
