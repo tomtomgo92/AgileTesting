@@ -32,3 +32,4 @@ Feature: Fonctionnalités de ma page de Configuration
         Then  Je clic donc sur le lien en bas de page "Localisations"
         And envoyer à "https://www.tesla.com/fr_FR/findus/list" 
     
+    
