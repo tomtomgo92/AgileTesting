@@ -4,11 +4,11 @@ Feature: Fonctionnalités de ma page d'evenement
 		Then le lien doit être "https://www.tesla.com/fr_FR/events"
 
     Scenario: Verifier le nombre d'evenement
-        Given les evenements via "view-content"
+        Given je suis sur evenement
         Then le nombre d'evenements doit etre "15"
 
     Scenario: Un buger menu
-		Given je suis sur la homepage
+		Given je suis sur evenement
 		Then le buger menu doit etre a "droite"
 		And le lien1 doit être "Actualités"
         And le lien2 doit être "Modèles d'exposition"
@@ -42,11 +42,10 @@ Feature: Fonctionnalités de ma page d'evenement
         And je valide avec un button value "Notify Me"
 
     Scenario: Je verifie que l'email est entré
-        Given je verifie l'ID "#parsley-id-83"
+        Given je suis sur evenement
         Then je recois "n'est pas une adresse e-mail valide"
 
     Scenario: JE verifie recevoir les evenement du RoyaumeUni
-        Given je verie l'ID "#edit-geoautocomplete"
+        Given je suis sur evenement
         Then l'input doit etre "Royaume-Uni"
-    
     
