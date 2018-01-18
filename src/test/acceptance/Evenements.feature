@@ -41,8 +41,12 @@ Feature: Fonctionnalités de ma page d'evenement
         And je doit contenir la checkBox "Recevoir les News Tesla"
         And je valide avec un button value "Notify Me"
 
-    Scenario: 
-    Given je verifie l'ID "#parsley-id-83"
-    Then je recois "n'est pas une adresse e-mail valide"
-    
+    Scenario: Je verifie que l'email est entré
+        Given je verifie l'ID "#parsley-id-83"
+        Then je recois "n'est pas une adresse e-mail valide"
 
+    Scenario: JE verifie recevoir les evenement du RoyaumeUni
+        Given je verie l'ID "#edit-geoautocomplete"
+        Then l'input doit etre "Royaume-Uni"
+    
+    
