@@ -1,0 +1,15 @@
+package test.autonomy;
+
+import org.junit.runner.RunWith;
+
+import cucumber.api.CucumberOptions;
+import cucumber.api.junit.Cucumber;
+
+@RunWith(Cucumber.class)
+@CucumberOptions(
+	features = {"../src/test/autonomy"}, // ou se situe votre fichier .feature
+	plugin = {"pretty"}
+	)
+public class TeslaAutonomyTest {
+
+}

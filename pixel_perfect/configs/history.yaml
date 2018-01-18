@@ -14,6 +14,8 @@
 ##############################################################
 ##############################################################
 
+#imports: "spider_paths.yml"
+
 # (required) The engine to run Wraith with. Examples: 'phantomjs', 'casperjs', 'slimerjs'
 browser: "chrome"
 
@@ -23,14 +25,28 @@ domains:
 
 # (required) The paths to capture. This particular config is using casperjs, so we can take screenshots of selectors rather than the entire page.
 paths:
-    home: /
-
+  home:
+    path: "/"
+    selector: ".section-intro"
+  models: /models
+  energy-solar-roof:
+    path: "/energy"
+    selector: ".section-solar-roof"
+  energy-commercial:
+    path: "/energy"
+    selector: ".section-commercial"
+  roadster: /roadster
+  events: 
+    path: "/events"
+    selector: ".view-events-page"
+  #  before_capture: javascript/resizeHeight.js
+    
 # (optional) JavaScript file to execute before taking screenshot of every path. Default: nil
 before_capture: '../javascript/wait--chrome.js'
 
 # (required) Screen widths (and optional height) to resize the browser to before taking the screenshot.
 screen_widths:
-  - 1280
+  - 1280x1500
 
 # (optional) Resize to each screen width (efficient), or reload at each screen width (costly). Default: 'reload'
 resize_or_reload: 'resize'
