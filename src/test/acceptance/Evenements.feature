@@ -1,33 +1,29 @@
 Feature: Fonctionnalités de ma page d'evenement
 	Scenario: Verifier si je suis sur la page d'evenement
 		Given je suis sur evenement
-		Then le lien doit être "https://www.tesla.com/fr_FR/events"
+
 
     Scenario: Verifier le nombre d'evenement
         Given je suis sur evenement
-        Then le nombre d'evenements doit etre "15"
+        Then le nombre d'evenements doit etre 15
 
-    Scenario: Un buger menu
-		Given je suis sur evenement
-		Then le buger menu doit etre a "droite"
-		And le lien1 doit être "Actualités"
-        And le lien2 doit être "Modèles d'exposition"
-        And le lien3 doit être "Véhicules d'occasion"
-        And le lien4 doit être "Recharger"
-        And le lien5 doit être "Nous trouver"
-        And le lien6 doit être "Evénements"
-        And le lien7 doit être "Empreinte carbone"
-        And le lien8 doit être "Assistance"
 
     Scenario: Un lien permet d'afficher tous les événement de la marque
         Given je suis sur evenement
-        Then je dois etre ".view-all"
-        And envoyer à "./events" 
+        Then le lien pour voir tous les evenements existe grâce à la classe ".view-all"
+        And envoyer à "./events"
 
     Scenario: Un lien permet d'afficher tous les événement de la marque
         Given je suis sur evenement
         Then je dois etre ".pager-next"
-        And envoyer à "./events"   
+        And envoyer à "./events"
+
+		Scenario: Je suis accessible depuis le Burger
+		      Given je suis sur evenement
+					When je clique sur le burger-menu
+					And je clique sur events
+		      Then je suis sur l'URL "https://www.tesla.com/fr_FR/events"
+
 
     Scenario: ce tenir informé des prochains événements de la marque
         Given je suis sur evenement
@@ -48,4 +44,3 @@ Feature: Fonctionnalités de ma page d'evenement
     Scenario: JE verifie recevoir les evenement du RoyaumeUni
         Given je suis sur evenement
         Then l'input doit etre "Royaume-Uni"
-    
