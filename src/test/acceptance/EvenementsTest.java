@@ -10,6 +10,6 @@ import cucumber.api.junit.Cucumber;
 	features = {"../src/test/acceptance"}, // ou se situe votre fichier .feature
 	plugin = {"pretty"}
 	)
-public class AutonomieTest {
+public class EvenementsTest {
 
 }
